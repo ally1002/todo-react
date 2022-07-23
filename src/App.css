@@ -11,6 +11,28 @@
   margin: 0 auto 2rem;
 }
 
+.item:hover {
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.list .item .actions .btn {
+  background: none;
+  border: none;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  color: rgba(235, 235, 235, 0.64);
+  cursor: pointer;
+}
+
+.list .item .actions .btn:hover{
+  color: #fff;
+}
+
 .list {
   padding-top: 25px;
 }

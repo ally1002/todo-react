@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { FaTrashAlt } from 'react-icons/fa';
 
 let newId = 0;
 function Todo() {
@@ -10,6 +11,7 @@ function Todo() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        if(text.trim().length == 0) return;
         newId++
 
         const todo = [...todos, {
@@ -20,6 +22,11 @@ function Todo() {
 
         setTodos(todo);
         setText('');
+    }
+
+    const handleDelete = id => {
+        const todo = [...todos];
+        setTodos(todo.filter(todo => todo.id != id));
     }
 
     return (
@@ -39,6 +46,12 @@ function Todo() {
                     <>
                         <div className="item">{todo.text}
                             <div className="actions">
+                                <button
+                                    className="btn"
+                                    onClick={() => {handleDelete(todo.id)}}
+                                >
+                                    <FaTrashAlt />
+                                </button>
                             </div>
                         </div>
                     </>
